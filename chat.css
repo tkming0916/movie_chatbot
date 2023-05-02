@@ -1,0 +1,246 @@
+@charset 'UTF-8';
+/*
+ * Cascading Style Sheet for chat/plain (http://confetto.s31.xrea.com/)
+ *
+ * $Name: release-3-0 $
+ * $Id: chat.css,v 3.3 2012/06/02 15:04:45 confetto Exp $
+ */
+
+/******************************************************************************
+ * 色の設定
+ ******************************************************************************/
+
+body {
+	/* ページの背景色 */
+	background-color: #ffcc66;
+	background-image: url(./img/eiga_kachinko.png);
+
+	/* ページの文字色 */
+	color: #333333;
+}
+
+/* 未訪問リンクの文字色 */
+a:link    { color: #0000ff }
+
+/* 既訪問リンクの文字色 */
+a:visited { color: #800080 }
+
+/* アクティブリンクの文字色 */
+a:active  { color: #ff0000 }
+
+h1 {
+	/* 発言者欄等の背景色 */
+	background-color: #ff9900;
+
+	/* 発言者欄等の文字色 */
+	/*color: #222222;*/
+	color: #ffffff;
+}
+
+h2, dt {
+	/* 発言者欄等の背景色 */
+	background-color: #ffffcc;
+
+	/* 発言者欄等の文字色 */
+	color: #222222;
+}
+
+dd {
+	background-color: #ffffff;
+}
+
+dd, dl, dt, h1, h2 {
+	/* 罫線の色 */
+	border-color: #999;
+}
+
+/******************************************************************************
+ * 色以外の設定
+ ******************************************************************************/
+
+* {
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+address, cite, em, var, .info, .info + * {
+	font-style: italic;
+}
+
+address, dt {
+	text-align: right;
+}
+
+address, dd:after {
+	clear: left;
+}
+
+blockquote {
+	margin: 1em 40px;
+}
+
+body {
+	line-height: 1.5;
+	padding: 1%;
+}
+
+caption, h2, th {
+	text-align: center;
+}
+
+code, input, kbd, pre, samp {
+	font-family: monospace;
+}
+
+h1 {
+	border-style: solid;
+
+	/*
+	width: 100%;
+	margin-right: auto;
+	padding-right: auto;
+	*/
+}
+
+dd, dl, dt, h2 {
+	border-style: solid;
+}
+
+dd, dt {
+	border-width: 1px 0 0;
+}
+
+dt, h1, h2, h3, h4, h5, h6, strong, th {
+	font-weight: bolder;
+}
+
+dt, #messages {
+	float: left;
+}
+
+dt {
+	margin-right: 4px;
+	padding-right: 8px;
+	width: 20%;
+	font-size: 150%;
+}
+
+dl {
+	border-width: 0 0 1px;
+}
+
+fieldset, form, h2, h3, h4, h5, h6, ol, p, pl {
+	margin: 1em 0;
+}
+
+h1, h2 {
+	border-width: 1px;
+}
+
+h1 {
+	font-size: 2em;
+	padding: 0 8px;
+}
+
+h5, h6, sub, sup {
+	font-size: .83em;
+}
+
+input, select {
+	box-shadow: 0px 0px 16px #cccccc;
+}
+
+input {
+	max-width: 98%;
+	padding: 1px;
+}
+
+ol, ul {
+	padding-left: 20px;
+}
+
+li ol, li ul {
+	margin: 0;
+}
+
+dd:after {
+	content: '.';
+	display: block;
+	height: 0;  /*チャットの高さを変更できる*/
+	visibility: hidden;
+
+}
+
+h1 {
+	text-align: center;
+}
+
+/*
+ * Firefoxでボタンの高さが変わるのを防ぐ。
+ * 参考: http://www.karlrixon.co.uk/writing/
+ *       remove-button-focus-outline-using-css
+ */
+input::-moz-focus-inner {
+	border-width: 0;
+}
+
+.message-date {
+	margin-left: 4px;
+}
+
+#messages {
+	width: 80%;
+}
+
+#sessions, #navigation {
+	margin-left: 81%;
+}
+
+#form h2, #messages h2 {
+	display: none;
+}
+
+/******************************************************************************
+ * 小さい画面向けの設定 (発言者欄の幅の最低値を6emくらいとする)
+ ******************************************************************************/
+
+/* device-width * 0.98 * 0.8 * 0.2 < 6em */
+@media handheld, (max-width: 38.26em) {
+	#messages {
+		float: none;
+		width: auto;
+	}
+
+	#navigation, #sessions {
+		margin: 0;
+	}
+}
+
+/* device-width * 0.98 * 0.2 < 6em */
+@media handheld, (max-width: 30.61em) {
+	body {
+		line-height: normal;
+	}
+
+	dt {
+		float: none;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		width: auto;
+	}
+}
+
+/******************************************************************************
+ * MSIEのための特殊な記述
+ ******************************************************************************/
+
+dt {
+	clear: left;
+}
+
+h2 {
+	font-size: 1em;
+}
